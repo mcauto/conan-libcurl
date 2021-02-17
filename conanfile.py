@@ -137,7 +137,7 @@ class LibcurlConan(ConanFile):
         sha256 = "d0393da38ac74ffac67313072d7fe75b1fa1010eb5987f63f349b024a36b7ffb"
         tools.get("{}curl-{}.tar.gz".format(source_url, self.version), sha256=sha256)
         os.rename("curl-%s" % self.version, self._source_subfolder)
-        tools.download("https://curl.haxx.se/ca/cacert.pem", "cacert.pem", verify=True)
+        tools.download("https://curl.haxx.se/ca/cacert.pem", "cacert.pem", verify=False)
 
     def build(self):
         self.patch_misc_files()
